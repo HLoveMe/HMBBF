@@ -1,0 +1,16 @@
+<ion-view view-title="{{'Agenda' | location}}">
+	<ion-content >
+		<ion-scroll direction="x" scrollbar-x="false" has-bouncing="false" style="width:100%;height:32px">
+			<div class="button-bar" style="width:{{scrollWidth}};background:#AAA;border:1px solid #666" >
+				<a class="button button-small" style="border-radius:0px;background:{{one.color}}" ng-repeat="one in times" ng-click="changeIndex(one)">{{one.content}}</a>
+			</div>
+		</ion-scroll>
+		<div style="background:#666;height:4px;width:100%"></div>
+		<ul class="list">
+			<li class="item item-input">
+				<input type="text" placeholder="搜索" style="border-radius:10px;margin-right:5px;background:#DDD;color:#000;padding-left:10px;font-size:16px">
+				<button class="button button-small " style="color:#000;width:35px;margin-right:5px;background:#F00">SS</button>
+			</li>
+		</ul>
+	</ion-content>
+</ion-view>

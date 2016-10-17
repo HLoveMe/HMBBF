@@ -1,0 +1,58 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top  tabs-color-active-positive" ng-controller="MainCtrl" ng-class="{'tabs-item-hide':hideTabs}">
+    <ion-tab icon-on="ion-ios-home" icon-off="ion-ios-home-outline" title="首页" href="#/tab/home">
+        <ion-nav-view name="tab-home">
+            
+        </ion-nav-view>
+    </ion-tab>
+    <ion-tab icon-on="ion-ios-book" icon-off="ion-ios-book-outline" title="指导" href="#/tab/meet">
+        <ion-nav-view name="tab-meet">
+            
+        </ion-nav-view>
+    </ion-tab>
+    <ion-tab icon-on="ion-ios-copy" icon-off="ion-ios-copy-outline" title="新闻" href="#/tab/news">
+        <ion-nav-view name="tab-news">
+            
+        </ion-nav-view>
+    </ion-tab>
+    <ion-tab icon-on="ion-ios-cog" icon-off="ion-ios-cog-outline" title="设置" href="#/tab/setting">
+        <ion-nav-view name="tab-setting">
+            
+        </ion-nav-view>
+    </ion-tab>
+</ion-tabs>
+
+<script type="text/ng-template" id ='sidemenu.html' >
+    <ion-popover-view style="width:180px;height:82%;">
+        <ul class="list">
+            <li class="item" ng-repeat = "one in sides" style="height:44px;line-height:44px;margin:0px;padding:0px;" >
+               <div class="row" style="height:44px;width:100%;padding:0px" ng-click="sidemenuClick($index)">
+                    <div class="col col-5" style="padding:0px"></div>
+                    <div class="col col-10" style="padding:0px">
+                        <i class="icon {{one.icon}}"  style="font-size:20px;"></i>
+                    </div>
+                    <div class="col col-5" style="padding:0px"></div>
+                    <div class="col col-55" style=";padding:0px">
+                        <p style="">{{one.name | location}}</p>
+                    </div>
+                    <div class="col" style="padding:0px;background:#F98">
+                        <div class="row " style="height:100%;padding:0px">
+                            
+                            <div class="col col-50 col-offset-25 col-center" style="height:20px;background:#F00;padding:0px;border-radius:10px;font-size:14px">
+                                11
+                            </div> 
+                            
+                        </div>
+                    </div>
+               </div>
+            </li>
+        </ul>
+    </ion-popover-view>
+</script>
+
+               
+             

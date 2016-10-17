@@ -1,0 +1,22 @@
+<ion-view cache='false' title="{{ 'News' | location }}">
+	<ion-content delegate-handle="resource-main-scroll" class="has-header" >
+		<ion-refresher delegate-handle="resource-main-refresher" pulling-text="下拉刷新" on-refresh="loadNewData()"></ion-refresher>
+		<ion-list delegate-handle="resource-main-list" >
+			<ion-item class="item-remove-animate" ng-repeat = "one in dataArr" ng-click="newsClick(one)">
+				<div style="float:left;;width:45%">
+					<img src="{{one.thum_img}}" style="height:100px;width:100%">
+				</div>
+				<div style="width:55%;margin-left:46%;;height:100px">
+					<h2  style=";padding:2px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">{{one.title}}</h2>
+					<p class="input-label" style="padding:0px;font-size:10px" >呵呵呵呵呵呵 {{showInfiniteScroll}}</p>
+					<div  style="margin-top:30px;background:#F00">
+						<i class="icon ion-navicon" style=" float:left;margin-left:5px"></i>
+						<p style="padding:0px;font-size:10px;margin-left:8px;float:left" >{{one.add_time}}</p>
+						<i class="icon ion-navicon" ng-click="shareMsg(one,$event)" style=" float:right;margi;margin-right:10px"></i>
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll on-infinite="loadMoreData()" ng-if="showInfiniteScroll" ></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,56 @@
+
+<ion-view view-title="{{'Global Mobile Broadband Forum (MBBF)' | location }}">
+	<ion-nav-buttons side="left">
+		<a class="button  icon ion-android-menu" style="border:0px" ng-click="showMenu($event)"></a>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<a class="button  icon ion-android-sync" style="border:0px" ng-click=""></a>
+		<a class="button  icon ion-search" style="border:0px" ng-click="seacher()"></a>
+	</ion-nav-buttons>  
+	<ion-content class="has-header" scroll="false" style="background:#0F1A2B">
+	<!--滚动图-->
+	
+	<ion-slide-box does-continue="true" auto-play="true" slide-interval="3000" show-pager="true" style="width:100%;height:35%;background:#F00">
+		<ion-slide  ng-repeat="one in newsArr" ng-click="imgClick(one)">
+			<img src="{{one.img}}" style="width:100%;height:100%">
+		</ion-slide>
+	</ion-slide-box>
+	<!--中间新闻部分-->
+	<div style="width:100%;height:8%;background:#F00;border:1px solid #F00" class="row "> 
+		<div class="col-20" style="text-align:center;background:#F98;border:1px solid" >
+			新闻资讯
+		</div>
+		<div class="col-10" style="border:1px solid;margin:0px;padding:0px">
+			<div  ng-click="speak()">
+				<a class="button button-small icon ion-home button-clear button-calm" style="margin-left:2px" ></a>
+			</div>
+		</div>
+		<div class="col" style="background:#0F0">
+			
+		</div>
+	</div>
+	<div style="width:100%;height:2px;background:#666">
+		<div style="width:44px;height:2px;margin-left:15px;background:#00F"></div>
+	</div>
+	<!--下部四部分-->
+	<div style="height:57%;width:100%;border:1px solid">
+		<div class="row" style="height:50%">
+			<div  style="margin-top:4px;width:49%;background:#1863B1" ng-click="moduleClick(0)">
+				<home-module title="大会议程" h-image-src="images/4.png" ></home-module>
+			</div>
+			<div style="margin-top:4px;width:49%;margin-left:2%;background:#5147B7" ng-click="moduleClick(1)">
+				<home-module title="精彩直播" h-image-src="images/4.png" ></home-module>
+			</div>
+		</div>
+
+		<div class="row" style="height:50%">
+			<div  style="margin-top:4px;width:49%;background:#14737E">
+				<home-module title="演讲嘉宾" h-image-src="images/4.png" ng-click="moduleClick(2)"></home-module>	
+			</div>
+			<div style="margin-top:4px;width:49%;margin-left:2%;background:#8C4B4E" ng-click="moduleClick(3)">
+				<home-module title="展区介绍" h-image-src="images/4.png"></home-module>
+			</div>
+		</div>
+	</div>		
+	</ion-content>
+</ion-view>

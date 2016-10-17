@@ -1,0 +1,17 @@
+/* Empty. Add your own CSS if you like */
+.col-55{
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 55%;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 %55;
+      -ms-flex: 0 0 55%;
+      flex: 0 0 55%;
+ }
+ .col-5{
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 5%;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 %5;
+      -ms-flex: 0 0 5%;
+      flex: 0 0 5%;
+ }

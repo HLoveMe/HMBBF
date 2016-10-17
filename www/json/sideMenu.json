@@ -1,0 +1,28 @@
+{
+	"statu":true,
+	"menus":[{
+		"icon":"ion-ios-list-outline",
+		"name":"Introduction",
+		"badge":0
+	},{
+		"icon":"ion-ios-people-outline",
+		"name":"Speakers",
+		"badge":0
+	},{
+		"icon":"ion-person-add",
+		"name":"Partner",
+		"badge":0
+	},{
+		"icon":"ion-ios-paper-outline",
+		"name":"Questionnaire",
+		"badge":0
+	},{
+		"icon":"ion-ios-chatboxes-outline",
+		"name":"Message",
+		"badge":0
+	},{
+		"icon":"ion-ios-gear-outline",
+		"name":"Settings",
+		"badge":0
+	}]
+}
