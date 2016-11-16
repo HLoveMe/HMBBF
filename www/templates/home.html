@@ -1,0 +1,57 @@
+<ion-view view-title="首页">
+    <ion-nav-buttons side="right">
+        <a class="button icon ion-android-sync" style="border:0px" ng-click="alert('尚未完善')"></a>
+        <a class="button icon ion-search" style="border:0px" ng-click="globalSeacher()"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side='left'>
+        <a class=" button icon icon ion-android-menu" style="border:0px" ng-click="operateSide()"></a>
+    </ion-nav-buttons>
+    <ion-content scroll="false" style="margin-top:1px">
+        <div class="row" style="height:35%;background:#666">
+            <ion-slide-box does-continue="true" auto-play="true" slide-interval="2000" delegate-handle="homeSlide" show-pager="true" style="height:100%">
+                <ion-slide ng-repeat="ad in adArr" style="width:100%;height:100%">
+                    <img src="ad.banner_img" style="width:100%;height:100%" async>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+        <div class="row" style="height:5%">
+            <div class="col col-20 col-center" style="text-align: center;font-size:15px">NEWS</div>
+            <div class="col col-10 col-center" style="text-align:center" ng-click="sayClick()">
+                <a class="icon ion-settings"></a>
+            </div>
+            <div class="col " style="background:#666">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row" style="height:30%">
+            <div class="col col-50" style="height:100%" ng-click="moduleClick(0)">
+                <home-module title='大会议程' img-src=""></home-module>
+            </div>
+            <div class="col col-50" style="height:100%" ng-click="moduleClick(1)">
+                <home-module title='视频直播' img-src=""></home-module>
+            </div>
+        </div>
+        <div class="row" style="height:30%">
+            <div class="col" style="height:100%" ng-click="moduleClick(2)">
+                <home-module title='嘉宾演讲' img-src=""></home-module>
+            </div>
+            <div class="col " style="height:100%" ng-click="moduleClick(3)">
+                <home-module title="展区介绍" img-src=""></home-module>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

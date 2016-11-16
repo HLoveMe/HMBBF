@@ -1,0 +1,24 @@
+<ion-view view-title='新闻详情'>
+	<ion-content>
+		<div style="font-size:15px;padding:5px;margin-left:5px;margin-top:10px;word-wrap:break-word">
+			{{news.title}}
+		</div>
+		<div style="background:#AAA;margin-top:5px;margin-left:10px;height:1px;"></div>
+		<div style="margin-left:10px;margin-top:5px;height:20px">
+			<div style="height:20px">
+				<img src="images/news/news_ clock.png" style="width:15px;height:15px;margin-left:4px;margin-top:2.5px;float: left">
+				<div style="float:left;margin-left:5px;font-size:16px;color:rgb(150,150,150)">{{news.date}}</div> 
+				<img src="images/news/news_share.png" style="width:15px;height:15px;margin-left:10px;margin-top: 2.5px" ng-click="share($event)">
+			</div>
+		</div>
+		<div id='briefContent' style="padding:10px"></div>
+		<div ng-if="hasVideo" style="background:#F00;text-align:center">
+			<video style="width:200px;height:160px" controls="controls" src="{{news.vedio_url}}">
+				
+			</video>
+		</div>
+		<div id="newsContent" style="padding: 5px">
+			
+		</div>
+	</ion-content>
+</ion-view>

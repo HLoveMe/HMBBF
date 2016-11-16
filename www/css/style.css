@@ -1,0 +1,75 @@
+/* Empty. Add your own CSS if you like */
+.row{
+	margin-top:0px;
+	padding: 0px;
+}
+.row + .row{
+	margin: 0px;
+	padding: 0px;
+}
+.col{
+	padding: 0px;
+	margin: 0px;
+}
+.col-55{
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 55%;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 %55;
+      -ms-flex: 0 0 55%;
+      flex: 0 0 55%;
+ }
+ .col-15{
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 15%;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 %15;
+      -ms-flex: 0 0 15%;
+      flex: 0 0 15%;
+ }
+ .col-5{
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 5%;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 %5;
+      -ms-flex: 0 0 5%;
+      flex: 0 0 5%;
+ }
+  .col-2{
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 2%;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 %2;
+      -ms-flex: 0 0 2%;
+      flex: 0 0 2%;
+ }
+ .item{
+      height: 54px;
+      padding: 0px;
+ }
+ .slider-pager{
+      bottom: 10px
+ }
+.button-small-small {
+  padding:0px;
+  min-width: 13px;
+  min-height: 10px;
+  font-size: 6px;
+  line-height: 12px;
+  border-radius:6px;
+  background:#FFF;
+  padding-left: 1px;
+  padding-top: 1px;
+  color:#FFF;
+}  
+
+
+.input-model{
+  line-height: 34px;
+  height: 34px;
+}
+
+
+
+
+
