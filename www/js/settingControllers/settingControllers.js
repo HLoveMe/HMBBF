@@ -1,4 +1,0 @@
-conCtrl.controller('sysMsgCtrl', function(){
-
-	
-})
