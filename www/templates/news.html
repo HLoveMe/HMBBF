@@ -1,0 +1,40 @@
+<ion-view view-title="资讯">
+	<ion-nav-buttons side='left'>
+		<!--<a class=" button icon icon ion-android-menu" style="border:0px" ng-click="operateSide()"></a>-->
+	</ion-nav-buttons>
+	<ion-content delegate-handle="newsScroll" >
+		<ion-refresher on-refresh="loadLast()" pulling-text="松开加载最新数据" refreshing-text="数据刷新 {{currentTime}}"></ion-refresher>
+		<input-module input-begin = "inputBegin()"></input-module>
+		<ul delegate-handle="newsLite">
+			<li ng-repeat="item in newsArr" style="height:102px;" ng-click="newsDetail(item)">
+				<div class="row" style="height:100%">
+					<div class="col col-50" style="margin:0px;height:100%;padding:5px">
+						<img src="item.thum_img" style="height:100%;width:100%" async>
+					</div>
+					<div class="col col-50" style="height:100%;">
+						<div class="row " style="height:60%;width:100%;;white-space:normal;word-wrap:break-word;font-size: 14px;padding-top:5px">
+							{{item.title}}
+						</div>
+						<div class="row" style="height:13%"></div>
+						<div class="row" style="height:25%;">
+							
+							<div class="col col-10 col-center" style="height:70%;text-align: center; display: table-cell;vertical-align:middle;padding: 0px">
+								<img src="images/news/news_ clock.png" style="margin: 0px">
+							</div>
+							<div class="col col-60 col-center" style="font-size:12px;padding-left:5px">
+								{{item.add_time}}
+							</div>
+							<div class="col col-10"></div>
+							<div class="col col-15 col-center" style="font-size:24px;text-align: center;color:#f00">
+								<a class="icon ion-ios-paperplane" style="height:80%" ng-click="share($event,item)"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="height:1px;width:100%;background-color:#AAAAAA"></div>
+			</li>
+		</ul>
+		<ion-infinite-scroll on-infinite="loadMore()" ng-if = "showInfinite" ></ion-infinite-scroll>
+		
+	</ion-content>
+</ion-view>
