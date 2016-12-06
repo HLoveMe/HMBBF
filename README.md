@@ -8,6 +8,9 @@
   
   > 该项目使用的接口为租用服务器 （会在某个时间段停止服务）/
     在停止服务后，如果您还需要测试数据 ( https://github.com/HLoveMe/HWMBBF_Serve ) 提供部分数据(首页数据,用于测试)
+    
+    
+  > 该项目只是ionic 编译出来的iOS工程. 完整项目请转至: https://pan.baidu.com/s/1c2EBZGW
  
  
     
