@@ -1,0 +1,39 @@
+<ion-view view-title="">
+    <div style="margin-top: 64px">
+        <div class="buttons " ng-if="showTopView" style="width:100%">
+            <button class="button" ng-repeat="day in dayData" style="border-radius: 0px;width:50%;background-color:{{day.backgroundColor}}" ng-click="topDaySelect(day)">{{day.date}}</button>
+        </div>
+    </div>
+    <ion-content has-subheader="true" style="margin-top:47px" delegate-handle="AgendaList">
+        <input-module placeholder="输入关键字" delegate-handle="AgendaInput" ng-if="showTopView" showclear="false" cancel-title="取消" action="cancelSeacher()"></input-module>
+        <div style="height:33px;width:100%;line-height:33px;text-align: center;background-color:#EEE;font-size:18px" ng-if="showTopView">KeyNote</div>
+        <ul>
+            <li ng-repeat="one in currentShowData" style="position:relative" ng-click="goToDetail(one)">
+                <div style="margin-left:15px;margin-top: 10px">
+                    {{one.time}}
+                </div>
+                <div style="position: absolute;right: 5px;top:0px">
+                    {{one.status_op}}
+                </div>
+                <div style="margin:5px 15px;font-size:15px;white-space:normal;word-wrap:break-word">
+                    {{one.theme_name}}
+                </div>
+                <div style="position:absolute;right:10px;bottom:10px;" ng-switch="one.is_collect">
+                	<a class="button button-small icon ion-ios-star-outline" ng-switch-when="0" style="border:0px;background-color: #FFF" ng-click="collectClick(one,$event)"></a>
+
+                	<a class="button button-small icon ion-ios-star" ng-switch-when="1" style="border:0px;background-color: #FFF;color:#F00" ng-click="collectClick(one,$event)"></a>
+                </div>
+                <ul ng-if="one.theme_guest.length>=1" style="margin-top:10px">
+                    <div style="margin-left:15px;height:1px;background-color: #AAA"></div>
+                    <li ng-repeat="one in [one.theme_guest[0]]">
+                        <div style="margin:2px 15px;font-size:13px">{{one.guest_name}}</div>
+                        <div style="margin:2px 15px;font-size:13px">{{one.position}}</div>
+                    </li>
+                </ul>
+                <div ng-if="one.theme_guest.length==0" style="height:30px;">
+                </div>
+                <div style="height:8px;background-color: #AAA"></div>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

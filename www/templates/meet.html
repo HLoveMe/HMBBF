@@ -1,0 +1,110 @@
+<ion-view view-title="会务指南">
+    <ion-nav-buttons side="left">
+        <!--<a class=" button icon icon ion-android-menu" style="border:0px" ng-click="operateSide()"></a>-->
+    </ion-nav-buttons>
+    <ion-content delegate-handle="meetScroll">
+        <ul delegate-handle="meetList">
+            <meet-divider model="titles[0]" ng-click="meetDividerClick(titles[0])">
+            </meet-divider>
+            <!-- 大会介绍 -->
+            <li ng-if="titles[0].showContent">
+                <div style="margin-top:5px;margin-left:10px;color:#F0F;font-size:18px">
+                    大会介绍
+                </div>
+                <div style="margin-left:10px;margin-right: 10px;background:#5a4">
+                    {{meetMsg.guide}}
+                </div>
+                <div style="height: 1px;background:#F00;margin-top: 4px;margin-left: 10px"></div>
+                <div style="margin-top:5px;margin-left:10px;color:#F0F;font-size:18px">
+                    WIFI
+                </div>
+                <div style="margin-left:10px;float:left;margin-top: 2px;margin-right:5px">
+                    名称:
+                </div>
+                <div style="margin-left:10px;margin-top: 2px;">
+                    {{meetMsg.wifi_account}}
+                </div>
+                <div style="margin-left:10px;float:left;margin-top: 2px;margin-right:5px">
+                    密码:
+                </div>
+                <div style="margin-left:10px;margin-top: 2px;">
+                    {{meetMsg.wifi_password}}
+                </div>
+                <div ng-if="titles[0].partShow(2)">
+                    <div style="height: 1px;background:#F00;margin-top: 4px;margin-left: 10px"></div>
+                    <div style="margin-top:5px;margin-left:10px;color:#F0F;font-size:18px">
+                        嘉宾用餐
+                    </div>
+                    <div style="margin-left:10px;float:left;margin-top: 2px;margin-right:5px">
+                        地点:
+                    </div>
+                    <div style="margin-left:10px;margin-top: 2px;">
+                        {{meetMsg.dinner_address}}
+                    </div>
+                    <div style="margin-left:10px;float:left;margin-top: 2px;margin-right:5px">
+                        时间:
+                    </div>
+                    <div style="margin-left:10px;margin-top: 2px;">
+                        {{meetMsg.dinner_time}}
+                    </div>
+                </div>
+                <div ng-if="titles[0].partShow(3)">
+                    <div style="height: 1px;background:#F00;margin-top: 4px;margin-left: 10px"></div>
+                    <div style="margin-top:5px;margin-left:10px;color:#F0F;font-size:18px">
+                        礼物领取
+                    </div>
+                    <div style="margin-left:10px;float:left;margin-top: 2px;margin-right:5px">
+                        地点:
+                    </div>
+                    <div style="margin-left:10px;margin-top: 2px;">
+                        {{meetMsg.keepsake_address}}
+                    </div>
+                    <div style="margin-left:10px;float:left;margin-top: 2px;margin-right:5px">
+                        名称:
+                    </div>
+                    <div style="margin-left:10px;margin-top:2px;margin-bottom: 5px">
+                        {{meetMsg.keepsake_time}}
+                    </div>
+                </div>
+            </li>
+            <meet-divider model="titles[1]" ng-click="meetDividerClick(titles[1])"></meet-divider>
+            <div ng-if="titles[1].showContent">
+                <div class="meet_venue_msg">{{venue.info}}</div>
+                <div>
+                    <img class="meet_venue_img" src="{{venue.img_url}}" ng-click="venue_img_Click(titles[1])">
+                </div>
+            </div>
+            <meet-divider model="titles[2]" ng-click="meetDividerClick(titles[2])"></meet-divider>
+            <ul ng-if="titles[2].showContent">
+                <li ng-repeat="hotel in hotels">
+                    <div style="margin:0px 10px;margin-top:5px;font-size:15px;font-weight:bold;color:#F0F">
+                        {{hotel.name.split('\r')[0]}}
+                    </div>
+                    <div style="margin: 0px 10px;color:#F0F">
+                        {{hotel.name.split('\r')[1]}}
+                    </div>
+                    <div style="margin-left: 10px;margin-right:5px;float:left">
+                        电话 :
+                    </div>
+                    <div style="margin:0px 0px;text-decoration:underline;color:rgb(61,128,241)">
+                        {{hotel.mobile}}
+                    </div>
+                    <div style="margin-left: 10px;margin-right:5px;float:left">
+                        地点 :
+                    </div>
+                    <div style="margin:0px 0px">
+                        {{hotel.address}}
+                    </div>
+                    <div style="margin-left: 10px;margin-right:5px;float:left">
+                        官网 :
+                    </div>
+                    <div style="margin:0px 0px;text-decoration:underline;color:rgb(61,128,241)">
+                        {{hotel.website}}
+                    </div>
+                    <div style="height: 1px;background:rgb(200,200,200);margin-top: 10px;margin-left: 10px;"></div>
+                </li>
+            </ul>
+            <meet-divider model="titles[3]" ng-click="meetDividerClick(titles[3])"></meet-divider>
+        </ul>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="视频直播">
+    <ion-content has-subheader="true">
+        <button-item data="dayData" bottom-color="#F00" click-action="selectDay()"></button-item>
+        <div>
+            <ul>
+                <li class="video_li" ng-repeat="video in lives" ng-click="goToVideo(video)">
+                    <div class="video_icon"></div>
+                    <div class="video_time">{{video.time}}</div>
+                    <div class="video_name">{{video.live_name}}</div>
+                    <div class="video_status">{{video.status_op}}</div>
+                    <div class="video_collection" ng-switch="video.is_collect">
+                        <div ng-switch-when="0">
+                            <a class="icon ion-ios-star-outline" ng-click="videoCollection($event,video)"></a>
+                        </div>
+                        <div ng-switch-when="1">
+                            <a class="icon ion-ios-star video_collection_select" ng-click="videoCollection($event,video)"></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>

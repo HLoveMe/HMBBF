@@ -1,0 +1,11 @@
+<ion-view view-title="问卷调查">
+    <ion-nav-buttons side="left"></ion-nav-buttons>
+    <ion-content has-subheader="true">
+        <img class="top_img" src="images/home/home_side_banner.png">
+		<ul class="list">
+			<li class="item" ng-repeat="paper in papers" ng-click="paperClick(paper)">
+				<div class="paper_div">{{paper.name}}</div>
+			</li>
+		</ul>
+    </ion-content>
+</ion-view>

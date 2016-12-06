@@ -1,0 +1,66 @@
+<ion-view view-title="问卷详细">
+    <ion-nav-buttons side="left"></ion-nav-buttons>
+    <ion-content has-subheader="true">
+        <img class="top_img" src="images/home/home_side_banner.png">
+        <ul>
+            <li ng-repeat="paper in questions" ng-switch="paper.type">
+                <div ng-switch-when="1">
+                    <div class="survey_title">
+                        {{paper.title}}
+                    </div>
+                    <ul>
+                        <ul ng-repeat="answer in paper.answer" class="">
+                            <div ng-switch="answer.select">
+                                <img class="survey_radio_icon" src="images/home/radio_normal.png" ng-switch-default>
+                                <img class="survey_radio_icon" src="images/home/radio_true.png" ng-switch-when="true">
+                            </div>
+                            <div class="survey_radio_answer" ng-click="radioSelect(paper,answer)">{{answer.answer}}</div>
+                        </ul>
+                    </ul>
+                    <div class="survey_line"></div>
+                </div>
+                <div ng-switch-when="2">
+                    <div class="survey_title">
+                        {{paper.title}}
+                    </div>
+                    <ul>
+                        <ul ng-repeat="answer in paper.answer" class="">
+                            <div ng-switch="answer.select">
+                                <img class="survey_radio_icon" src="images/home/check_normal.png" ng-switch-default>
+                                <img class="survey_radio_icon" src="images/home/check_true.png" ng-switch-when="true">
+                            </div>
+                            <div class="survey_radio_answer" ng-click="checkSelect(paper,answer)">{{answer.answer}}</div>
+                        </ul>
+                    </ul>
+                    <div class="survey_line"></div>
+                </div>
+                <div ng-switch-when="3">
+                    <div class="survey_title">
+                        {{paper.title}}
+                    </div>
+                    <div>
+                    	<div contenteditable="true" id="{{'ID'+paper.id.toString()}}" class="survey_open_questions"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="survey_submit" ng-if="questions.length>=1">
+        		<div class="survey_submit_title">
+        				名字
+        		</div>
+        		<div >
+        			<input ng-model="questions.name" class="survey_submit_name_input" type="" name="" placeholder="输入名称">
+        		</div>
+        		<div class="survey_submit_title">
+        				邮箱
+        		</div>
+        		<div >
+        			<input ng-model="questions.email" class="survey_submit_name_input" type="" name="" placeholder="输入邮箱">
+        		</div>
+
+        		<div style="margin-top:10px;text-align:center">
+        			<button class="paper_submit_Button" ng-click="submitPaper()">提交</button>
+        		</div>
+        </div>
+    </ion-content>
+</ion-view>
